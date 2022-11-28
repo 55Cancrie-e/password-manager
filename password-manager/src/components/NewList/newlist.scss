@@ -1,0 +1,92 @@
+.modal-box{
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    padding: 35px;
+}
+.title {
+    color: hsl(0deg, 0%, 21%);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    margin-bottom: 1.5rem;
+}
+
+.input{
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1.25rem;
+    width: 100%;
+    outline: none;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 2px);
+    padding-left: calc(0.75em - 2px);
+    padding-right: calc(0.75em - 2px);
+    padding-top: calc(0.5em - 2px);
+    position: relative;
+    vertical-align: top;
+    background-color: #f8f8f8
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+
+    .button {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        
+    }
+    .button:not(:last-child):not(.is-fullwidth){
+        margin-right: 0.5rem;
+    }
+}
+
+.danger {
+    border: 2px solid rgb(255, 0, 0);
+    background-color: #ff000028;
+}
+.danger::placeholder{
+    color: #ff0000c4;
+}
+
+.inputWithButton {
+    
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1.25rem;
+    width: 100%;
+    outline: none;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 2px);
+    padding-left: calc(0.75em - 2px);
+    padding-right: calc(0.75em - 2px);
+    padding-top: calc(0.5em - 2px);
+    position: relative;
+    vertical-align: top;
+    background-color: #f8f8f8
+}
+
+.buttonIn{
+    position: relative;
+}
+.buttonHide {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+}

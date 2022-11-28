@@ -1,0 +1,420 @@
+@import '../../global.scss';
+.loginBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    h2{
+        margin-right: 10px;
+        font-weight: 100;
+        font-size: 18px;
+}
+}
+ 
+.task-manager-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+     // max-width: 1300px; 
+    border-radius: 8px;
+     // max-height: 750px; 
+    background-color: white;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    background-color: hsl(0deg, 0%, 100%);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .button{
+        color: #fff;
+        font-size: 1.25rem;
+    }
+    .title {
+        color: #3998d7;
+        font-size: 30px;
+        text-align: center;
+    }
+}
+.task-list-container{
+    position: relative;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 42px;
+    .top-bar{
+        margin-bottom: 20px;
+        display: flex;
+
+        .title{
+            flex-grow: 1;
+            margin: 0;
+            color: #3998d7 
+        }
+    }
+}
+.list-menu{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    flex-grow: 1;
+    overflow-y: scroll;
+    .list-menu-item{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        overflow-y: scroll;
+        padding: 0 15px;
+        border-radius: 5px;
+        width: 300px;
+        max-width: 300px;
+        padding-bottom: 5px;
+        height: 300px;
+        background-color: rgb(245, 245, 245);
+        color: #5f5f5f;
+        margin: 10px 20px;
+        text-decoration: none;
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+
+        }
+        p{
+            margin: 0;
+            width: 100%;
+        }
+        &:hover{
+            background-color: $light;
+        }
+
+        &.is-active {
+            background-color: #cfe2f8;
+            color: $Dark-blue;
+        }   
+        small {
+            width: 100%;
+            position: absolute;
+            bottom: 50px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .numberOfTasks{
+            width: 100%;
+        }
+    }
+}
+
+.task {
+    display: flex;
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-items: center;
+    margin: 10px 10px;
+    
+    &:not(.complete){
+    cursor: pointer;
+    transition:  box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:active{
+        transform: scale(0.95);
+    }
+    &:hover{
+        box-shadow:  0 0 0 5px #eeeeee;
+
+        .task-buttons {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    }
+    &.completed .task-text {
+        text-decoration: line-through;
+        opacity: 50%;
+    }
+
+    .task-text{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        small{
+            font-size: 9px;
+            position: absolute;
+            right: 20px;
+            bottom: 5px;
+        }
+    }
+
+    .task-buttons {
+        display: flex;
+        transition: opacity 0.2s, transform 0.2s;
+        opacity: 0;
+        transform: scale(0.85);
+    }
+}
+.circle-add-button{
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background: $primary;
+    border-radius: 50%;
+}
+
+.empty-state-text {
+    font-size: 20px;
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.dropdown{
+    display: inline-flex;
+    // position: relative;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    vertical-align: top;
+
+    &:hover{
+        .dropdown-menu{
+            display: block;
+        }
+    }
+
+    .dropdown-menu{
+        left: auto;
+        right: 0;
+        display: none;
+        min-width: 12rem;
+        padding-top: 4px;
+        position: absolute;
+        top: 100%;
+        z-index: 20;
+
+    }
+    .dropdown-content{
+        background-color: hsl(0deg, 0%, 100%);
+        border-radius: 4px;
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+
+        a{
+            text-align: inherit;
+            white-space: nowrap;
+            // width: 100%;
+            text-decoration: none;
+        }
+        .dropdown-item{
+            color: hsl(0deg, 0%, 29%);
+            display: block;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            padding: 0.375rem 1rem;
+            position: relative;
+
+            &:hover{
+                background-color: rgb(233, 233, 233);
+            }
+        }
+        .danger{
+            color: hsl(348deg, 86%, 61%)
+        }
+    }
+
+}
+
+.sortBlock{
+    display: flex;
+    align-items: center;
+    p{
+        margin-right: 5px;
+    }
+    @media screen and (max-width: 745px) {
+        justify-content: center;
+    }
+}
+
+.navBlock{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 745px) {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}
+.dropdown-sort{
+    display: inline-flex;
+    position: relative;
+    vertical-align: top;
+
+    &:hover{
+        .dropdown-menu-sort{
+            display: block;
+        }
+    }
+
+    .button{
+        font-size: 1rem;
+    }
+
+    .dropdown-menu-sort{
+        left: 0;
+        right: auto;
+        display: none;
+        min-width: 12rem;
+        padding-top: 4px;
+        position: absolute;
+        top: 100%;
+        z-index: 20;
+
+    }
+    .dropdown-content-sort{
+        background-color: hsl(0deg, 0%, 100%);
+        border-radius: 4px;
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+
+        a{
+            text-align: inherit;
+            white-space: nowrap;
+            // width: 100%;
+            text-decoration: none;
+        }
+        .dropdown-item-sort{
+            color: hsl(0deg, 0%, 29%);
+            display: block;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            padding: 0.375rem 1rem;
+            position: relative;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(233, 233, 233);
+            }
+        }
+        .danger{
+            color: hsl(348deg, 86%, 61%)
+        }
+    }
+
+}
+
+.filterInput{
+    background-color: #f8f8f8;
+    box-shadow: none;
+    max-width: 100%;
+    width: 300px;
+    border-color: transparent;
+    border-radius: 4px;
+    color: hsl(0deg, 0%, 21%);
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    outline: none;
+    justify-content: flex-start;
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+}
+
+.loginNameBlock{
+    display: flex;
+    align-items: center;
+
+    h2{
+        font-weight: 100;
+    }
+
+    @media screen and (max-width: 745px) {
+        justify-content: center;
+    }
+}
+.titleBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskPath{
+    width: 100%;
+    padding: 15px 0;
+    font-size: 19px;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    cursor: pointer;
+    background-color: #3998d7;
+    color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.buttonLink{
+    background-color: hsl(0deg, 0%, 100%);
+    border: 2px solid #c8c8c8;
+    position: absolute;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    border-radius: 4px;
+    color: hsl(0deg, 0%, 21%);
+    cursor: pointer;
+    padding-bottom: calc(0.5em - 2px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 2px);
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.security {
+    -webkit-text-security: disc;
+    padding: 1px 2px;
+}
+
+.buttonHideBlock{
+    margin-left: 10px;
+    width: 30px;
+    cursor: pointer;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.passwordBlock {
+    display: flex;
+    align-items: center;
+}

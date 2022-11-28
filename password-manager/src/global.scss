@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+
+$turquoise: #44bedd;
+$blue: #3998d7;
+
+$light-blue: #45c4f6;
+$Dark-blue: #277cfb ;
+$light: #f8f8f8;
+
+
+$family-sans-serif: 'Nunito', sans-serif;
+$primary: $blue;
+
+$link: $light-blue;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow:none;
+
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(to right top, #44bedd, #3998d7) no-repeat;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+} 
+
+#root{
+    width: 100%;
+    height: 100%;
+}
+.App{
+    width: 100%;
+    height: 100%;
+}
+
+.centered-content{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-box{
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    padding: 35px;
+}
+
+.title{
+    font-family: 'Lato';
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.white-box{
+    padding: 35px;
+    background: white;
+    border-radius: 5px;
+    min-width: 300px;
+}
+
+.button {
+    background-color: hsl(0deg, 0%, 100%);
+    position: relative;
+    border: 2px solid #c8c8c8;
+    border-radius: 4px;
+    color: hsl(0deg, 0%, 21%);
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 2px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 2px);
+    text-align: center;
+    white-space: nowrap;
+}
+.button:hover {
+    background-color: rgb(246, 246, 246);
+}
+.button:active {
+    transform: scale(0.98);
+}
+.is-success {
+    background-color: hsl(153deg, 53%, 53%);
+    border-color: transparent;
+    color: #fff;
+}
+.is-success:hover {
+    background-color: rgb(87, 209, 154);
+}
+.is-primary {
+    background-color: #3998d7;
+    border-color: transparent;
+    color: #fff;
+}
+.is-primary:hover{
+    background-color: #3fa2e4;
+}
+
+.is-danger {
+    background-color: #f14668;
+    border-color: transparent;
+    color: #fff;
+}
+
+.is-danger:hover{
+    background-color: #f15776;
+}
+
+

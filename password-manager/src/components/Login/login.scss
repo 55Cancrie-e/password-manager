@@ -1,0 +1,81 @@
+.text-grey{
+    color: #7A7A7A;
+}
+.text-grey a{
+    text-decoration: none;
+    color: #3998d7;
+}
+.white-box .title{
+    color: #3998d7;
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    font-family: "Lato";
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+.control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+}
+.inputLogin {
+    font-size: 1.25rem;
+    background-color: #f8f8f8;
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 4px;
+    color: hsl(0deg, 0%, 21%);
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    outline: none;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-left: 35px;
+    padding-bottom: calc(0.5em - 2px);
+    padding-top: calc(0.5em - 2px);
+    position: relative;
+    vertical-align: top;
+}
+
+.danger {
+    border: 2px solid rgb(255, 0, 0);
+    background-color: #ff000028;
+}
+.danger::placeholder{
+    color: #ff0000c4;
+}
+.colorRed{
+    color: #ff0000c4;
+}
+.icon {
+    font-size: 1.25rem;
+    left: 5px;
+    color: hsl(0deg, 0%, 86%);
+    height: 2.5em;
+    pointer-events: none;
+    position: absolute;
+    top: 12px;
+    width: 2.5em;
+    z-index: 4;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}

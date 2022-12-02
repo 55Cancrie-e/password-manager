@@ -8,15 +8,14 @@ const BoardOfList = () => {
   const dispatch = useDispatch();
   const naviagate = useNavigate();
   const [hide, setHide] = useState()  
-  const [data, setData] = useState();
   const name = useSelector((state) => state.list.user.name);
   const list = useSelector((state) => state.list.lists.list);
-
+  const delet = useSelector((state) => state.list.deleteListReq);
 
   useEffect(() => {
     dispatch(getUserInfo())
     dispatch(getLists())
-  }, [list])
+  }, [delet])
     
   const logOut = () => {
     dispatch(logOutFunc());

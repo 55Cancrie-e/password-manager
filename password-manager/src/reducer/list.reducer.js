@@ -2,6 +2,7 @@ let initialState = {
     user: {},
     lists: [],
     newListSucc: false,
+    deleteListReq: false,
     newListMassege: '',
     editListSucc: false,
     err: '',
@@ -47,10 +48,16 @@ const list = (state = initialState, action) => {
                 ...state,
                 newListMassege: action.payload
             }
+        case "DELETE_REQ":
+            return {
+                ...state,
+                deleteListReq: false
+            }
         case "DELETE_LIST":
             return {
                 ...state,
-                deleteList: action.payload
+                deleteList: action.payload,
+                deleteListReq: true
             }
         case "EDIT_LIST":
             return {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { newList } from '../../actions/listAction'
+import { newList, newListRequest } from '../../actions/listAction'
 
 import './newlist.scss'
 const NewList = () => {
@@ -17,6 +17,7 @@ const NewList = () => {
   const success = useSelector((state) => state.list.newListSucc)
 
   useEffect(() => {
+    dispatch(newListRequest())
     if(success) {
       navigate('/lists')
     }

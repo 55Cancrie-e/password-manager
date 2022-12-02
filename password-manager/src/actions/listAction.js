@@ -44,6 +44,7 @@ export const newList = (name, password) => {
 
 export const deleteListById = (id) => {
     return (dispatch) => {
+        dispatch(deleteListReq())
         instance.delete(`${rootUrl}/api/lists/${id}`)
         .then(res => {
             dispatch(deleteListAction(res.data.massege))
@@ -99,7 +100,7 @@ const getListsError = (err) => {
     }
 }
 
-const newListRequest = () => {
+export const newListRequest = () => {
     return {
         type: "NEW_LIST_REQ"
     }
@@ -123,6 +124,12 @@ const deleteListAction = (succ) => {
     return {
         type: "DELETE_LIST",
         payload: succ
+    }
+}
+
+const deleteListReq = (succ) => {
+    return {
+        type: "DELETE_REQ"
     }
 }
 
